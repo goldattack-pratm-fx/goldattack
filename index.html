@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GOLD ATTACK | BY PPRATM_FX</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ICON -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* ==================================================
+           RESET
+        ================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: "Inter", sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(0, 102, 255, 0.15),
+                    transparent 35%
+                ),
+                #020408;
+
+            overflow-x: hidden;
+        }
+
+
+        /* ==================================================
+           BACKGROUND GRID
+        ================================================== */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -5;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(35, 126, 255, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(35, 126, 255, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+        }
+
+
+        /* ==================================================
+           BACKGROUND GLOW
+        ================================================== */
+
+        .glow-blue {
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            top: -220px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            background: rgba(0, 100, 255, 0.11);
+
+            filter: blur(120px);
+
+            z-index: -4;
+
+            pointer-events: none;
+        }
+
+        .glow-gold {
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            right: -200px;
+            top: 50%;
+
+            border-radius: 50%;
+
+            background: rgba(210, 165, 40, 0.06);
+
+            filter: blur(120px);
+
+            z-index: -4;
+
+            pointer-events: none;
+        }
+
+
+        /* ==================================================
+           CONTAINER
+        ================================================== */
+
+        .container {
+            width: min(92%, 850px);
+
+            margin: auto;
+        }
+
+
+        /* ==================================================
+           HERO IMAGE
+        ================================================== */
+
+        .hero-image-wrapper {
+            width: 100%;
+
+            margin: 0 auto;
+
+            padding-top: 20px;
+
+            animation:
+                imageAppear 1s ease forwards;
+        }
+
+        .hero-image {
+            display: block;
+
+            width: 100%;
+
+            max-width: 850px;
+
+            height: auto;
+
+            margin: auto;
+
+            border-radius: 24px;
+
+            border:
+                1px solid
+                rgba(62, 135, 255, 0.22);
+
+            box-shadow:
+                0 30px 100px
+                rgba(0, 61, 155, 0.25),
+
+                0 0 50px
+                rgba(211, 168, 43, 0.06);
+        }
+
+
+        @keyframes imageAppear {
+
+            from {
+                opacity: 0;
+                transform: scale(0.97) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+
+        }
+
+
+        /* ==================================================
+           BRANDING
+        ================================================== */
+
+        header {
+            text-align: center;
+
+            padding:
+                35px 0
+                25px;
+        }
+
+        .main-title {
+            font-size:
+                clamp(48px, 9vw, 80px);
+
+            line-height: 0.95;
+
+            font-weight: 900;
+
+            letter-spacing: -4px;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #ffffff,
+                    #d9e8ff,
+                    #348cff,
+                    #ffffff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            text-shadow:
+                0 0 35px
+                rgba(45, 135, 255, 0.12);
+        }
+
+        .subtitle {
+            margin-top: 15px;
+
+            color: #438eff;
+
+            font-weight: 700;
+
+            font-size: 13px;
+
+            letter-spacing: 5px;
+        }
+
+
+        /* ==================================================
+           DECORATIVE LINE
+        ================================================== */
+
+        .decorative-line {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin:
+                25px auto
+                18px;
+        }
+
+        .decorative-line span {
+            width: 85px;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #287fff
+                );
+        }
+
+        .decorative-line span:last-child {
+            background:
+                linear-gradient(
+                    90deg,
+                    #287fff,
+                    transparent
+                );
+        }
+
+        .decorative-line i {
+            color: #d4a932;
+
+            font-size: 9px;
+        }
+
+
+        /* ==================================================
+           DESCRIPTION
+        ================================================== */
+
+        .description {
+            max-width: 560px;
+
+            margin:
+                0 auto;
+
+            color: #68768b;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           STATUS
+        ================================================== */
+
+        .status {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 22px;
+
+            padding:
+                8px 14px;
+
+            border-radius: 50px;
+
+            color: #65a4ff;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            border:
+                1px solid
+                rgba(50, 131, 255, 0.18);
+
+            background:
+                rgba(30, 100, 180, 0.09);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #36a0ff;
+
+            box-shadow:
+                0 0 10px #36a0ff;
+
+            animation:
+                blink 2s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: .3;
+            }
+
+        }
+
+
+        /* ==================================================
+           BUTTON SECTION
+        ================================================== */
+
+        .buttons {
+            padding:
+                20px 0
+                70px;
+        }
+
+
+        /* ==================================================
+           BUTTON
+        ================================================== */
+
+        .link-button {
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            width: 100%;
+
+            min-height: 82px;
+
+            margin-bottom: 16px;
+
+            padding:
+                0 24px;
+
+            overflow: hidden;
+
+            border-radius: 16px;
+
+            border:
+                1px solid
+                rgba(42, 103, 180, 0.30);
+
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(9, 21, 37, 0.97),
+                    rgba(5, 10, 18, 0.97)
+                );
+
+            color: #ffffff;
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease,
+                background .3s ease;
+
+            animation:
+                buttonAppear .7s ease both;
+        }
+
+
+        .link-button:nth-child(1) {
+            animation-delay: .10s;
+        }
+
+        .link-button:nth-child(2) {
+            animation-delay: .20s;
+        }
+
+        .link-button:nth-child(3) {
+            animation-delay: .30s;
+        }
+
+        .link-button:nth-child(4) {
+            animation-delay: .40s;
+        }
+
+        .link-button:nth-child(5) {
+            animation-delay: .50s;
+        }
+
+
+        @keyframes buttonAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* LEFT BORDER */
+
+        .link-button::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 4px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #0874ff,
+                    #60a7ff
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(29, 125, 255, .55);
+        }
+
+
+        /* GLOW */
+
+        .link-button::after {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            right: -110px;
+            top: -95px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(30, 122, 255, .05);
+
+            transition: .4s ease;
+        }
+
+
+        .link-button:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(50, 140, 255, .70);
+
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(11, 29, 53, .99),
+                    rgba(5, 12, 23, .99)
+                );
+
+            box-shadow:
+                0 18px 40px
+                rgba(0, 77, 190, .18);
+        }
+
+
+        .link-button:hover::after {
+            transform: scale(1.3);
+        }
+
+
+        /* ==================================================
+           BUTTON CONTENT
+        ================================================== */
+
+        .button-content {
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+
+        /* ==================================================
+           BUTTON ICON
+        ================================================== */
+
+        .button-icon {
+            width: 48px;
+            height: 48px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            color: #3891ff;
+
+            background:
+                rgba(28, 116, 255, .08);
+
+            border:
+                1px solid
+                rgba(44, 132, 255, .14);
+
+            font-size: 17px;
+
+            transition: .3s ease;
+        }
+
+        .link-button:hover .button-icon {
+            transform: scale(1.06);
+
+            background:
+                rgba(30, 120, 255, .15);
+        }
+
+
+        /* ==================================================
+           BUTTON TEXT
+        ================================================== */
+
+        .button-text {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            text-align: left;
+        }
+
+        .button-label {
+            color: #526d8e;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .button-title {
+            color: #f4f8ff;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            letter-spacing: .3px;
+        }
+
+
+        /* ==================================================
+           BUTTON ARROW
+        ================================================== */
+
+        .arrow {
+            position: relative;
+
+            z-index: 2;
+
+            color: #41536c;
+
+            font-size: 14px;
+
+            transition: .3s ease;
+        }
+
+        .link-button:hover .arrow {
+            color: #3c92ff;
+
+            transform:
+                translateX(5px);
+        }
+
+
+        /* ==================================================
+           GOLD ACCENT BUTTON
+        ================================================== */
+
+        .gold-accent::before {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f2d064,
+                    #a97a18
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(220, 170, 42, .55);
+        }
+
+        .gold-accent .button-icon {
+
+            color: #dbb039;
+
+            background:
+                rgba(215, 170, 40, .09);
+
+            border-color:
+                rgba(215, 170, 40, .16);
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+            padding:
+                0 20px
+                45px;
+
+            text-align: center;
+        }
+
+        .footer-line {
+            width: min(100%, 650px);
+
+            height: 1px;
+
+            margin:
+                0 auto
+                25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #1a293d,
+                    transparent
+                );
+        }
+
+        .footer-title {
+            color: #3d4f65;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+        .footer-title span {
+            color: #3584ff;
+        }
+
+        .footer-copy {
+            margin-top: 10px;
+
+            color: #26313f;
+
+            font-size: 9px;
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 600px) {
+
+            .hero-image {
+                border-radius: 15px;
+            }
+
+            .hero {
+                padding-top: 20px;
+            }
+
+            .main-title {
+                font-size: 52px;
+
+                letter-spacing: -3px;
+            }
+
+            .subtitle {
+                font-size: 10px;
+
+                letter-spacing: 3px;
+            }
+
+            .description {
+                font-size: 12px;
+
+                padding:
+                    0 10px;
+            }
+
+            .link-button {
+                min-height: 72px;
+
+                padding:
+                    0 18px;
+            }
+
+            .button-content {
+                gap: 13px;
+            }
+
+            .button-icon {
+                width: 43px;
+                height: 43px;
+            }
+
+            .button-title {
+                font-size: 12px;
+            }
+
+            .button-label {
+                font-size: 7px;
+            }
+
+            .arrow {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="glow-blue"></div>
+    <div class="glow-gold"></div>
+
+
+    <!-- ==================================================
+         HERO IMAGE
+    ================================================== -->
+
+    <div class="container">
+
+        <div class="hero-image-wrapper">
+
+            <img
+                src="gold-attack-hero.png"
+                alt="Gold Attack Trading"
+                class="hero-image"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         BRANDING
+    ================================================== -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <h1 class="main-title">
+                GOLD ATTACK
+            </h1>
+
+            <div class="subtitle">
+                BY PPRATM_FX
+            </div>
+
+
+            <div class="decorative-line">
+
+                <span></span>
+
+                <i class="fa-solid fa-star"></i>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="description">
+
+                Your gateway to trading, financial education,
+                market information and professional trading
+                resources.
+
+            </p>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                TRADING COMMUNITY ONLINE
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         BUTTONS
+    ================================================== -->
+
+    <main class="container">
+
+        <section class="buttons">
+
+
+            <!-- ==================================================
+                 1. HFM WEBSITE
+            ================================================== -->
+
+            <a
+                href="https://www.hfmtrade-ind.com/sv/en/?refid=30566739"
+                class="link-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="button-content">
+
+                    <div class="button-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div class="button-text">
+
+                        <span class="button-label">
+                            OFFICIAL WEBSITE
+                        </span>
+
+                        <span class="button-title">
+                            HFM WEBSITE
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right arrow"></i>
+
+            </a>
+
+
+
+            <!-- ==================================================
+                 2. HFM TRADING EDUCATION
+            ================================================== -->
+
+            <a
+                href="https://www.hfmtrade-ind.com/sv/en/trading-education/?refid=30566739"
+                class="link-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="button-content">
+
+                    <div class="button-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div class="button-text">
+
+                        <span class="button-label">
+                            EDUCATION
+                        </span>
+
+                        <span class="button-title">
+                            HFM TRADING EDUCATION
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right arrow"></i>
+
+            </a>
+
+
+
+            <!-- ==================================================
+                 3. HFM REGISTRATION
+            ================================================== -->
+
+            <a
+                href="https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30566739"
+                class="link-button gold-accent"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="button-content">
+
+                    <div class="button-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <div class="button-text">
+
+                        <span class="button-label">
+                            JOIN NOW
+                        </span>
+
+                        <span class="button-title">
+                            HFM REGISTRATION
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right arrow"></i>
+
+            </a>
+
+
+
+            <!-- ==================================================
+                 4. HFM TRADERS BOARD
+            ================================================== -->
+
+            <a
+                href="https://www.hfmtrade-ind.com/sv/en/trading-tools/traders-board/?refid=30566739"
+                class="link-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="button-content">
+
+                    <div class="button-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div class="button-text">
+
+                        <span class="button-label">
+                            TRADING COMMUNITY
+                        </span>
+
+                        <span class="button-title">
+                            HFM TRADERS BOARD
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right arrow"></i>
+
+            </a>
+
+
+
+            <!-- ==================================================
+                 5. HFM APP / HFM PLATFORM
+            ================================================== -->
+
+            <a
+                href="https://www.hfmtrade-ind.com/sv/en/platforms/mobile-application/?refid=30566739"
+                class="link-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="button-content">
+
+                    <div class="button-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+
+                    <div class="button-text">
+
+                        <span class="button-label">
+                            MOBILE PLATFORM
+                        </span>
+
+                        <span class="button-title">
+                            HFM APP / HFM PLATFORM
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right arrow"></i>
+
+            </a>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-title">
+
+            GOLD ATTACK
+            <span>•</span>
+            PPRATM_FX
+
+        </div>
+
+        <div class="footer-copy">
+
+            FINANCE • TRADING • GOLD
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

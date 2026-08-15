@@ -1,0 +1,100 @@
+/* =====================================================
+   MAIN LOGO
+===================================================== */
+
+.main-logo {
+    width: 220px;
+    height: 220px;
+
+    margin: 30px auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.main-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(226, 175, 42, 0.18)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.main-logo img:hover {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(226, 175, 42, 0.35)
+        );
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.main-title {
+    font-size:
+        clamp(48px, 9vw, 80px);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff,
+            #dceaff,
+            #368bff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 35px
+        rgba(48, 132, 255, 0.10);
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.subtitle {
+    margin-top: 15px;
+
+    color: #438eff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    text-align: center;
+}
