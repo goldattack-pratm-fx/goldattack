@@ -3,10 +3,10 @@
 ===================================================== */
 
 .main-logo {
-    width: 220px;
-    height: 220px;
+    width: 120px;
+    height: 120px;
 
-    margin: 30px auto 20px;
+    margin: 100px auto 50px;
 
     display: flex;
     align-items: center;
